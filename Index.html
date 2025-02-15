@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Portal</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .portal-container {
+            text-align: center;
+            padding: 2rem;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            animation: portal-glow 2s infinite;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px #00fff9;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 2rem;
+        }
+
+        .teleport-btn {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background: #000;
+            color: #fff;
+            border: 2px solid #00fff9;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .teleport-btn:hover {
+            background: #00fff9;
+            color: #000;
+            box-shadow: 0 0 20px #00fff9;
+        }
+
+        @keyframes portal-glow {
+            0% { box-shadow: 0 0 20px #00fff9; }
+            50% { box-shadow: 0 0 40px #00fff9; }
+            100% { box-shadow: 0 0 20px #00fff9; }
+        }
+
+        .teleport-animation {
+            animation: teleport 1s forwards;
+        }
+
+        @keyframes teleport {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(5); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="portal-container">
+        <h1>♔ Chess Dimension ♚</h1>
+        <p>Prepare to enter the ultimate chess experience</p>
+        <p>▾▾▾▾▾</p>
+        <button class="teleport-btn" onclick="initiateTeleport()">Activate Teleport</button>
+        <p style="margin-top: 2rem; opacity: 0.8;">Created by Ankit</p>
+    </div>
+
+    <script>
+        function initiateTeleport() {
+            // Add teleport animation to body
+            document.body.classList.add('teleport-animation');
+            
+            // Redirect after animation completes
+            setTimeout(() => {
+                window.location.href = 'Chess.html';
+            }, 800);
+        }
+    </script>
+</body>
+</html>
